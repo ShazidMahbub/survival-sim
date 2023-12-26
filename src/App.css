@@ -1,0 +1,81 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  padding: 20px;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  gap: 20px;
+}
+
+.instructions-container {
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  margin-bottom: 20px; /* Space between instructions and the game area */
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr; /* GameInfo, SystemText, GameZone */
+  gap: 10px;
+  width: 100%;
+}
+
+.GameInfo,
+.GameZone,
+.SystemText {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  padding: 20px;
+  overflow: auto;
+}
+
+.SystemText {
+  height: 300px;
+  font-family: monospace;
+}
+
+.timestamp {
+  color: #888;
+}
+
+.GameOver {
+  padding: 20px;
+  text-align: center;
+  color: red;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr; /* Stack components vertically on small screens */
+    width: 80%;
+  }
+
+  .GameInfo,
+  .GameInstructions {
+    /* make font size smaller */
+    font-size: 0.8em;
+  }
+
+  .GameInfo,
+  .GameZone,
+  .SystemText {
+    width: 90%; /* Adjust height for smaller screens */
+    margin-bottom: 10px; /* Add some space between stacked components */
+  }
+}
